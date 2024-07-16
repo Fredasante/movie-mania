@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FaSearch } from "react-icons/fa";
+import SearchInput from "./SearchInput";
 
 const Header = () => {
   return (
@@ -17,6 +17,8 @@ const Header = () => {
             MM
           </span>
         </Link>
+
+        <SearchInput />
       </div>
     </header>
   );
