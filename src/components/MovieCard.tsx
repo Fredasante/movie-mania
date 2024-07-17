@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const MovieCards = () => {
+const MovieCard = () => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
       <div className="shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-full">
@@ -29,4 +29,4 @@ const MovieCards = () => {
   );
 };
 
-export default MovieCards;
+export default MovieCard;
