@@ -56,11 +56,15 @@ input:focus {
 }
 
 .h2 {
-  font-size: var(--fs-2);
+  font-size: var(--fs-3);
+  font-weight: var(--fw-700);
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 5px;
 }
 
 .h3 {
-  font-size: var(--fs-6);
+  font-size: var(--fs-4);
 }
 
 /* HEADER  */
@@ -114,7 +118,6 @@ input:focus {
   :root {
     --fs-1: 42px;
   }
-
   .container {
     max-width: 540px;
     margin-inline: auto;
@@ -189,3 +192,5 @@ input:focus {
     width: 1320px;
   }
 }
+
+

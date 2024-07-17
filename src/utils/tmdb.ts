@@ -19,3 +19,27 @@ export const fetchMovies = async (endpoint: string) => {
   }
   return response.json();
 };
+
+export const getUpcomingMovies = async (limit: number = 4) => {
+  const data = await fetchMovies("/movie/upcoming");
+  const limitedData = data.results.slice(0, limit);
+  return limitedData;
+};
+
+export const getTrendingMovies = async (limit: number = 4) => {
+  const data = await fetchMovies("/trending/movie/day");
+  const limitedData = data.results.slice(0, limit);
+  return limitedData;
+};
+
+export const getPopularMovies = async (limit: number = 4) => {
+  const data = await fetchMovies("/movie/popular");
+  const limitedData = data.results.slice(0, limit);
+  return limitedData;
+};
+
+export const getTopRatedMovies = async (limit: number = 4) => {
+  const data = await fetchMovies("/movie/top_rated");
+  const limitedData = data.results.slice(0, limit);
+  return limitedData;
+};
