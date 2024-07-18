@@ -27,21 +27,26 @@ const page = async ({ params: { id } }: { params: Params }) => {
         <div className="p-6 text-gray-100">
           <h1 className="h2">{movieDetail.title}</h1>
 
-          <div className="flex gap-4 text-sm font-bold">
-            <span className="text-primary-100">{movieDetail.release_date}</span>
-            <div className="text-gray-200 ml-7 flex items-center">
+          <div className="flex flex-wrap gap-4 lg:gap-10 text-sm font-semibold">
+            <span className="">
+              Release Date:
+              <span className="text-primary-100 ml-1">
+                {movieDetail.release_date}
+              </span>
+            </span>
+            <div className="text-gray-200 flex items-center">
               <FaThumbsUp className="text-teal-500 mr-1" />
               {movieDetail.vote_count.toLocaleString()} votes
             </div>
           </div>
 
-          <p className="my-5">{movieDetail.overview}</p>
+          <p className="my-4">{movieDetail.overview}</p>
 
           <div>
             {movieDetail.genres.map((genre: { id: number; name: string }) => (
               <span
                 key={genre.id}
-                className="inline-block bg-gray-200 text-slate-700 px-3 py-1 text-sm font-semibold mr-2"
+                className="inline-block bg-gray-200 text-slate-700 px-3 py-1 text-sm font-semibold mr-2 mt-3"
               >
                 {genre.name}
               </span>
