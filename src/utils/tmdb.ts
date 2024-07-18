@@ -43,3 +43,8 @@ export const getTopRatedMovies = async (limit: number = 5) => {
   const limitedData = data.results.slice(0, limit);
   return limitedData;
 };
+
+export const getMovieDetails = async (id: string) => {
+  const data = await fetchMovies(`/movie/${id}`);
+  return data;
+};

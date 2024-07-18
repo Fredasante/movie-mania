@@ -9,13 +9,16 @@ interface MovieCardProps {
 
 const MovieCard = ({ movies }: MovieCardProps) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
       {movies.map((movie) => (
-        <div className="shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-full">
-          <Link href={"/"}>
+        <div
+          key={movie.id}
+          className="shadow-md hover:shadow-lg transition-shadow overflow-hidden rounded-lg w-full"
+        >
+          <Link href={`/movies/${movie.id}`}>
             <Image
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-              alt="listing cover"
+              alt={movie.title}
               width={200}
               height={200}
               className="h-[320px] sm:h-[220px] w-full object-cover hover:scale-105 transition-scale duration-300"
