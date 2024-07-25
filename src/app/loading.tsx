@@ -1,9 +1,9 @@
-import Image from "next/image";
+import Spinner from "@/components/Spinner";
 
 const Loading = () => {
   return (
-    <div className="flex justify-center mt-12">
-      <Image src="/spinner.svg" alt="loading" width={100} height={100} />
+    <div className="flex justify-center items-center min-h-[70vh]">
+      <Spinner />
     </div>
   );
 };

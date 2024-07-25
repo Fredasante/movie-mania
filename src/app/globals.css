@@ -113,6 +113,7 @@ input:focus {
   color: var(--citrine);
 }
 
+
  /* responsive for large than 550px screen */
 @media (min-width: 550px) {
   :root {

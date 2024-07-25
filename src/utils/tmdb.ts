@@ -69,3 +69,8 @@ export const getMovieVideos = async (id: string): Promise<MovieVideo[]> => {
   const data = await fetchData<VideoResponse>(`/movie/${id}/videos`);
   return data.results;
 };
+
+export const searchMovies = async (query: string): Promise<Movie[]> => {
+  const data = await fetchData<MovieResponse>("/search/movie", { query });
+  return data.results;
+};

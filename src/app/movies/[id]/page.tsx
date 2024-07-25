@@ -14,9 +14,9 @@ const page = async ({ params: { id } }: { params: Params }) => {
   return (
     <div className="container">
       <section className="grid sm:grid-cols-2 items-center w-full max-w-5xl rounded-lg overflow-hidden mx-auto my-6 md:my-10 2xl:my-16">
-        <div className="h-[430px]">
+        <div className="h-[430px] text-gray-100">
           <Image
-            src={`https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}`}
+            src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`}
             alt={movieDetail.title}
             height={500}
             width={500}
