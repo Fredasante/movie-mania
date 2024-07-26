@@ -47,7 +47,7 @@ const SearchPage = () => {
       )}
 
       {movies.length > 0 && (
-        <h1 className="text-gray-50 h2">
+        <h1 className="text-gray-50 h2 my-10">
           Search results for: <span className="text-primary-100">{query}</span>
         </h1>
       )}

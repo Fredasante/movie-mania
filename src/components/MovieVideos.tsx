@@ -20,7 +20,7 @@ const MovieVideos = async ({ id }: MovieVideosProps) => {
 
   if (!officialTrailers.length && !relatedVideos.length) {
     return (
-      <p className="text-gray-200 text-lg">
+      <p className="text-gray-100 text-lg my-10 text-center">
         No videos available for this movie.
       </p>
     );
