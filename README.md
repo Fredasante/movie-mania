@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Movie Mania
 
-## Getting Started
+Movie Mania is a simple video application built using Next.js, Tailwind CSS, and the TMDb API. It displays a list of movies, allows users to view details of each movie, the official trailer, related videos and includes a search functionality.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Project Setup](#project-setup)
+- [Pages and Navigation](#pages-and-navigation)
+- [Data Handling](#data-handling)
+- [Search Functionality](#search-functionality)
+- [Styling](#styling)
+- [Additional Features](#additional-features)
+- [Approach and Trade-offs](#approach-and-trade-offs)
+  - [Approach](#approach)
+  - [Trade-offs](#trade-offs)
+- [Deployment](#deployment)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Project Setup
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository:**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+   ```bash
+   git clone https://github.com/Fredasante/movie-mania.git
+   cd movie-mania
+   ```
 
-## Learn More
+2. **Install dependencies:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Add your TMDb API key:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   - Create a `.env.local` file in the root of your project.
+   - Add your API key:
 
-## Deploy on Vercel
+   ```env
+   NEXT_PUBLIC_TMDB_API_KEY=your_api_key_here
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Run the development server:**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   npm run dev
+   ```
+
+5. **Open** [http://localhost:3000](http://localhost:3000) **in your browser to view the application.**
+
+## Pages and Navigation
+
+- **Home Page (/):** Displays a list of top rated, upcoming, trending and popular movies.
+- **Movie Detail Page (/movies/[id]):** Displays details of a single movie based on its ID.
+- **Search Page (/search):** Allows users to search for movies by title.
+
+## Data Handling
+
+- The TMDb API was used to fetch movie data.
+- Each movie displays the following information: id, title, overview, release_date, votes,poster_path and genre.
+- Server-side rendering (SSR) was used for fetching and displaying movie data.
+
+## Search Functionality
+
+- Search functionality on homepage redirects to the Search Page with the search results.
+- Client-side rendering (CSR) was used for displaying search results.
+
+## Styling
+
+- The application is responsive and looks good on both desktop and mobile devices.
+
+## Additional Features
+
+- Displays the official trailer and related videos on the single movie page.
+
+## Approach and Trade-offs
+
+### Approach
+
+The project follows modern web development practices and is optimized for performance. The application leverages Next.js for server-side rendering, ensuring that movie data is fetched and displayed efficiently. Tailwind CSS is used for styling, providing a responsive and visually appealing UI.
+
+### Trade-offs
+
+- **UI Library:** I decided against using any UI library to keep the project lightweight and to have more control over the design and styling. This decision required more effort in writing custom styles but allowed for a more tailored user experience.
+- **Testing:** Limited testing has been implemented. More comprehensive testing could improve the reliability and maintainability of the application.
+
+## Deployment
+
+You can view the live demo of the application [here](https://movie-mania-fawn.vercel.app).
