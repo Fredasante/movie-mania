@@ -10,6 +10,7 @@ Movie Mania is a simple video application built using Next.js, Tailwind CSS, and
 - [Search Functionality](#search-functionality)
 - [Styling](#styling)
 - [Additional Features](#additional-features)
+- [Testing](#testing)
 - [Approach and Trade-offs](#approach-and-trade-offs)
   - [Approach](#approach)
   - [Trade-offs](#trade-offs)
@@ -71,6 +72,15 @@ Movie Mania is a simple video application built using Next.js, Tailwind CSS, and
 ## Additional Features
 
 - Displays the official trailer and related videos on the single movie page.
+
+## Testing
+
+- The project uses Jest for testing.
+- To run tests, execute:
+
+  ```bash
+  npm test
+  ```
 
 ## Approach and Trade-offs
 
