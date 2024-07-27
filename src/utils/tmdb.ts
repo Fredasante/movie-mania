@@ -26,13 +26,20 @@ export const fetchData = async <T>(
   params?: { [key: string]: string }
 ): Promise<T> => {
   const url = buildUrl(endpoint, params);
-  const response = await fetch(url);
 
-  if (!response.ok) {
-    throw new Error(`Failed to fetch data from ${url}`);
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(
+        `Failed to fetch data from ${url} : ${response.statusText}`
+      );
+    }
+
+    return response.json();
+  } catch (error) {
+    console.error(`Failed to fetch data from ${url} : ${error}`);
+    return {} as T;
   }
-
-  return response.json();
 };
 
 export const getUpcomingMovies = async (
