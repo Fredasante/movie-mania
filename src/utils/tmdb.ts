@@ -23,7 +23,7 @@ const buildUrl = (
 
 export const fetchData = async <T>(
   endpoint: string,
-  params?: { [key: string]: string }
+  params?: { [key: string]: any }
 ): Promise<T> => {
   const url = buildUrl(endpoint, params);
 
@@ -45,26 +45,34 @@ export const fetchData = async <T>(
 export const getUpcomingMovies = async (
   limit: number = 5
 ): Promise<Movie[]> => {
-  const data = await fetchData<MovieResponse>("/movie/upcoming");
+  const data = await fetchData<MovieResponse>("/movie/upcoming", {
+    next: { revalidate: 21600 }, //Revalidate every 6 hours
+  });
   return data.results.slice(0, limit);
 };
 
 export const getTrendingMovies = async (
   limit: number = 5
 ): Promise<Movie[]> => {
-  const data = await fetchData<MovieResponse>("/trending/movie/day");
+  const data = await fetchData<MovieResponse>("/trending/movie/day", {
+    next: { revalidate: 3600 }, //Revalidate every hour
+  });
   return data.results.slice(0, limit);
 };
 
 export const getPopularMovies = async (limit: number = 5): Promise<Movie[]> => {
-  const data = await fetchData<MovieResponse>("/movie/popular");
+  const data = await fetchData<MovieResponse>("/movie/popular", {
+    next: { revalidate: 43200 }, //Revalidate every 12 hours
+  });
   return data.results.slice(0, limit);
 };
 
 export const getTopRatedMovies = async (
   limit: number = 5
 ): Promise<Movie[]> => {
-  const data = await fetchData<MovieResponse>("/movie/top_rated");
+  const data = await fetchData<MovieResponse>("/movie/top_rated", {
+    next: { revalidate: 86400 },
+  }); //Revalidate every 24 hours
   return data.results.slice(0, limit);
 };
 
