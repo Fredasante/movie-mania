@@ -16,7 +16,11 @@ const page = async ({ params: { id } }: { params: Params }) => {
       <section className="grid sm:grid-cols-2 items-center w-full max-w-5xl rounded-lg overflow-hidden mx-auto my-6 md:my-10 2xl:my-16">
         <div className="h-[430px] text-gray-100">
           <Image
-            src={`https://image.tmdb.org/t/p/original/${movieDetail.poster_path}`}
+            src={
+              movieDetail.poster_path
+                ? `https://image.tmdb.org/t/p/original${movieDetail.poster_path}`
+                : "/placeholder.jpg"
+            }
             alt={movieDetail.title}
             height={500}
             width={500}
@@ -36,11 +40,16 @@ const page = async ({ params: { id } }: { params: Params }) => {
             </span>
             <div className="text-gray-200 flex items-center">
               <FaThumbsUp className="text-teal-500 mr-1" />
-              {movieDetail.vote_count.toLocaleString()} votes
+              {movieDetail.vote_count.toLocaleString()} vote
+              {movieDetail.vote_count === 1 ? "" : "s"}
             </div>
           </div>
 
-          <p className="my-4">{movieDetail.overview}</p>
+          <p className="my-4">
+            {movieDetail.overview
+              ? movieDetail.overview
+              : "No description available for this movie."}
+          </p>
 
           <div>
             {movieDetail.genres.map((genre: { id: number; name: string }) => (

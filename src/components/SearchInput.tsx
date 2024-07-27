@@ -27,7 +27,7 @@ const SearchInput = () => {
           />
           <button
             type="submit"
-            className="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-teal-800 rounded-e-lg hover:bg-teal-700 focus:ring-4 focus:outline-none"
+            className="absolute top-0 end-0 p-2.5 text-sm font-medium h-full text-white bg-teal-800 rounded-e-lg hover:bg-teal-700 focus:outline-none"
           >
             <FaSearch />
             <span className="sr-only">Search</span>
